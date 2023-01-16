@@ -11,10 +11,18 @@ export class TodoPage implements OnInit {
     { name: 'タスク1'},
     { name: 'タスク2'},
   ];
+  task: string;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addTask(){
+    this.tasks.push({
+      name: this.task
+    });
+    this.task = '';
   }
 
 }
