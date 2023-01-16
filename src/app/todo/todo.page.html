@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <!-- {{}}で括ると、TSファイルのプロパティを使える -->
+      {{title}}
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Default input</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Input with placeholder</ion-label>
+      <ion-input placeholder="Enter company name"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Input with value</ion-label>
+      <ion-input value="121 S Pinckney St #300"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Readonly input</ion-label>
+      <ion-input value="Madison" [readonly]="true"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Disabled input</ion-label>
+      <ion-input value="53703" [disabled]="true"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-content>
+  <form class="ion-padding">
+    <ion-item lines = "full" class="ion-padding-bottom">
+      <ion-label position="floating">タスク</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-button expand="block">追加</ion-button>
+  </form>
+  <ion-list>
+    <ion-item><ion-label>タスク1</ion-label></ion-item>
+    <ion-item><ion-label>タスク2</ion-label></ion-item>
+  </ion-list>
+</ion-content>
