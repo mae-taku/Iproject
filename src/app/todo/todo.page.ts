@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoPage implements OnInit {
   title = 'タスク登録';
+  tasks : { name: string}[] =[
+    { name: 'タスク1'},
+    { name: 'タスク2'},
+  ];
 
   constructor() { }
 
