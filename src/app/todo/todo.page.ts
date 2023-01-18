@@ -33,4 +33,8 @@ export class TodoPage implements OnInit {
     this.task = '';
   }
 
+  onClickAllClear(){
+    localStorage.clear();
+  }
+
 }
