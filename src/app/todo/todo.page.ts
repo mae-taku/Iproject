@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-todo',
@@ -18,10 +19,17 @@ export class TodoPage implements OnInit {
   ngOnInit() {
   }
 
+  ionViewWillEnter(){
+    if ('tasks' in localStorage){
+      this.tasks = JSON.parse(localStorage.getItem("tasks") || "");
+    }
+  }
+
   addTask(){
     this.tasks.push({
       name: this.task
     });
+    localStorage.setItem("tasks",JSON.stringify(this.tasks));
     this.task = '';
   }
 
