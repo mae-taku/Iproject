@@ -28,7 +28,7 @@ export class TaskListPage implements OnInit {
    * async/await 非同期処理
    * 他の処理を待たずに他の処理を行う。
    */
-  async doChangeTask() {
+  async doChangeTask(index: number) {
     const actionSheet = await this.actionSheetController.create({
       header: 'タスクの変更',
       buttons: [{
@@ -36,6 +36,8 @@ export class TaskListPage implements OnInit {
         role: 'destructive',
         icon: 'trash',
         handler: () => {
+          this.tasks.splice(index, 1);
+          localStorage.setItem("tasks",JSON.stringify(this.tasks));
           console.log('Delete clicked');
         }
       }, {
