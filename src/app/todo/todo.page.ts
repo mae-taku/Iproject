@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-todo',
@@ -13,6 +12,8 @@ export class TodoPage implements OnInit {
     { name: 'タスク2'},
   ];
   task: string;
+  num: number;
+
 
   constructor() { }
 
@@ -35,6 +36,14 @@ export class TodoPage implements OnInit {
 
   onClickAllClear(){
     localStorage.clear();
+  }
+
+  /**
+   * プロパティのnumを税込にする。
+   */
+  addTax(){
+    const tax: number = 1.1;
+    this.num = Math.round(this.num * tax);
   }
 
 }

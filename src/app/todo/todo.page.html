@@ -57,4 +57,15 @@
     </ion-item>
   </ion-list>
   <ion-button expand="block" color="danger" (click)="onClickAllClear()" >All Clear</ion-button>
+  <ion-input type="number"[(ngModel)]="num" (submit)="addTax()"></ion-input>
+  {{num}}
+  <form class="ion-padding" (submit) = "addTax()">
+    <ion-item lines = "full" class="ion-padding-bottom">
+      <ion-label position="floating">税込表示</ion-label>
+      <ion-input type="number" [(ngModel)]="num" name ="num"></ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit">
+      計算
+    </ion-button>
+  </form>
 </ion-content>
