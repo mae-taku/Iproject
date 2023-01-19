@@ -8,12 +8,15 @@ import { OutResourcePageRoutingModule } from './out-resource-routing.module';
 
 import { OutResourcePage } from './out-resource.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OutResourcePageRoutingModule
+    OutResourcePageRoutingModule,
+    HttpClientModule
   ],
   declarations: [OutResourcePage]
 })
