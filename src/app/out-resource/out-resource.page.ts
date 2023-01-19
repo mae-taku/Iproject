@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OutResourcePage implements OnInit {
 
-  constructor() { }
+  // 記事のプロパティ
+  posts: {
+    ID: number;
+    title: string;
+    content: string;
+    date: string
+  }[] = [];
+
+  constructor(
+    ) {}
 
   ngOnInit() {
   }
