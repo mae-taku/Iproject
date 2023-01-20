@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>OutResource</ion-title>
+    <ion-title>記事一覧</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-header *ngFor="let p of posts">
+      <ion-card-subtitle>{{p.date}}</ion-card-subtitle>
+      <ion-card-title>{{p.title}}</ion-card-title>
+    </ion-card-header>
+    {{posts}}
 
+  </ion-card>
 </ion-content>

@@ -1,25 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { IPost } from '../interfaces/post';
 
 @Component({
   selector: 'app-out-resource',
   templateUrl: './out-resource.page.html',
   styleUrls: ['./out-resource.page.scss'],
 })
-export class OutResourcePage implements OnInit {
+export class OutResourcePage {
 
   // 記事のプロパティ
-  posts: {
-    ID: number;
-    title: string;
-    content: string;
-    date: string
-  }[] = [];
+  posts: IPost[] = [];
+  // posts: any = [];
 
   constructor(
+    public http: HttpClient,
     ) {}
 
-  ngOnInit() {
-  }
 
+  ionViewDidEnter() {
+    this.http.get('https://public-api.wordpress.com/rest/v1.1/sites/ionicjp.wordpress.com/posts/')
+    .subscribe(response => {
+      this.setData(response);
+    });
+  }
+  setData(response: any){
+    this.posts = response['posts'];
+  }
 }
