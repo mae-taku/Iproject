@@ -24,6 +24,13 @@ export class OutResourcePage {
       this.setData(response);
     });
   }
+  /**
+   * 書籍通りすると、以下のエラーになる。
+   * 型 '"posts"' の式を使用して型 'Object' にインデックスを付けることはできないため、要素は暗黙的に 'any' 型になります。
+   * プロパティ 'posts' は型 'Object' に存在しません。
+   * →明示的に、オブジェクトの型をanyとする。
+   * @param response
+   */
   setData(response: any){
     this.posts = response['posts'];
   }
