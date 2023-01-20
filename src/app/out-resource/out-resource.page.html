@@ -7,7 +7,7 @@
 <ion-content>
   <ion-card>
     <ion-card-header *ngFor="let p of posts">
-      <ion-card-subtitle>{{p.date}}</ion-card-subtitle>
+      <ion-card-subtitle>{{p.date  | date: "yyyy年mm月dd日"}}</ion-card-subtitle>
       <ion-card-title>{{p.title}}</ion-card-title>
     </ion-card-header>
   </ion-card>
