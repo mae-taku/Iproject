@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'out-resource',
     loadChildren: () => import('./out-resource/out-resource.module').then( m => m.OutResourcePageModule)
+  },
+  {
+    path: 'article',
+    loadChildren: () => import('./article/article.module').then( m => m.ArticlePageModule)
   }
 ];
 
