@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>記事一覧</ion-title>
+「    <ion-title>記事一覧</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <ion-card-header *ngFor="let p of posts">
+    <ion-card-header *ngFor="let p of posts" [routerLink]="['/article']" routerLinkActive="router-link-active" >
       <ion-card-subtitle>{{p.date  | date: "yyyy年mm月dd日"}}</ion-card-subtitle>
       <ion-card-title>{{p.title}}</ion-card-title>
     </ion-card-header>
