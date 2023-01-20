@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 import { IPost } from '../interfaces/post';
 
 @Component({
@@ -15,13 +16,20 @@ export class OutResourcePage {
 
   constructor(
     public http: HttpClient,
+    public loadingController: LoadingController,
     ) {}
 
 
-  ionViewDidEnter() {
+    async  ionViewDidEnter() {
+      const loading = await this.loadingController.create({
+        message: 'Loading...',
+        spinner: 'bubbles'
+      });
+      await loading.present();
     this.http.get('https://public-api.wordpress.com/rest/v1.1/sites/ionicjp.wordpress.com/posts/')
     .subscribe(response => {
       this.setData(response);
+      loading.dismiss();
     });
   }
   /**
